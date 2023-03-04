@@ -30,3 +30,17 @@ def test_bst_insert_right(bst):
     """Добавляем первый элемент справа."""
     bst.insert({'id': 50})
     assert bst.root.right.data == {'id': 50}
+
+
+def test_bst_insert_left_left(bst):
+    """Добавляем два элемента слева."""
+    bst.insert({'id': 30})
+    bst.insert({'id': 25})
+    assert bst.root.left.left.data == {'id': 25}
+
+
+def test_bst_insert_right_right(bst):
+    """Добавляем два элемента справа."""
+    bst.insert({'id': 50})
+    bst.insert({'id': 60})
+    assert bst.root.right.right.data == {'id': 60}
